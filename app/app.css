@@ -271,3 +271,7 @@ body.noanim *, body.noanim *::before { animation: none !important; transition: n
   .fbox h1 { font-size: 22px; } #ftime { font-size: 44px; } .ftij { height: 150px; }
 }
 .rowf .inl { white-space: normal; flex-wrap: wrap; }
+
+/* arrastar com o dedo */
+[draggable=true] { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+.fantasma { opacity: .92; box-shadow: 0 14px 30px rgba(0, 0, 0, .35) !important; animation: none !important; }

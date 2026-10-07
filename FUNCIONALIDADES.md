@@ -204,3 +204,8 @@
 164. Manual do método dentro do app
 165. Respeita a preferência de reduzir movimento
 166. Obra de exemplo que some ao sincronizar com dados reais
+
+## No celular
+
+167. Arrastar com o dedo: segure o bloco por um instante e leve até o dia ou a outra coluna do Kanban
+168. Rolagem automática ao levar o bloco para a borda da tela

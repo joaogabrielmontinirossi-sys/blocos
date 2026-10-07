@@ -128,7 +128,7 @@ function vMontar() {
         <label class="tog"><input type="checkbox" data-bf="leve" ${f.leve ? 'checked' : ''}><span>Pouca energia</span></label></div>
       ${livres.length ? grupos.filter(g => g.l.length).map(g => `<h4>${g.cor ? `<i class="dot" style="background:${g.cor}"></i>` : ''}${esc(g.nome)} <span class="muted">${g.l.length}</span></h4>${g.l.map(b => brick(b)).join('')}`).join('')
         : `<p class="empty">${todos.length ? 'Nenhum bloco passa neste filtro.' : S.blocos.some(b => !b.feito && naMesa(b)) ? 'Nada na bancada: os blocos liberados já estão no dia.' : 'Nenhum bloco para montar. Desmonte um projeto em <b>Obras</b> ou capture um bloco avulso acima.'}</p>`}
-      <p class="muted sm hint">Arraste um bloco para o dia, ou toque nele. Só aparecem os blocos cujas entradas já existem.</p>
+      <p class="muted sm hint">Arraste um bloco para o dia (no celular, segure-o por um instante), ou toque nele. Só aparecem os blocos cujas entradas já existem.</p>
     </section>
   </div>`;
 }
@@ -678,14 +678,17 @@ document.addEventListener('dragstart', e => { const b = e.target.closest && e.ta
 document.addEventListener('dragend', () => { document.body.classList.remove('drag'); document.querySelectorAll('.over,.pego').forEach(x => x.classList.remove('over', 'pego')); });
 document.addEventListener('dragover', e => { const z = e.target.closest('[data-drop]'); if (!z) return; e.preventDefault(); z.classList.add('over'); });
 document.addEventListener('dragleave', e => { const z = e.target.closest('[data-drop]'); if (z && !z.contains(e.relatedTarget)) z.classList.remove('over'); });
-document.addEventListener('drop', e => {
-  const z = e.target.closest('[data-drop]'); if (!z) return;
-  e.preventDefault();
-  const b = byId(S.blocos, e.dataTransfer.getData('text/plain')); if (!b) return;
+// soltar um bloco numa área: vale para o mouse (drop) e para o dedo (toque.js)
+function soltar(id, z) {
+  const b = byId(S.blocos, id); if (!b) return;
   if (z.dataset.drop === 'k') kdrop(b.id, z.dataset.col, z.dataset.modo);
   else if (z.dataset.drop === 'dia') agendar(b.id, U.dia);
   else if (b.dia) { b.dia = ''; Data.put('blocos', b); }
   draw();
+}
+document.addEventListener('drop', e => {
+  const z = e.target.closest('[data-drop]'); if (!z) return;
+  e.preventDefault(); soltar(e.dataTransfer.getData('text/plain'), z);
 });
 addEventListener('beforeinstallprompt', e => { e.preventDefault(); inst = e; if (U.tab === 'ajustes') draw(); });
 
