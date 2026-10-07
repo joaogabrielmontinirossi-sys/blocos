@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blocos</title>
+<meta name="description" content="Blocos: tarefas como peças de montar. Desmonte o projeto em blocos, encaixe as entradas nas saídas e monte o dia.">
+<meta name="theme-color" content="#1B1F2A">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Blocos">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header id="bar">
+  <div class="brand"><img src="logo.svg" alt=""><span>Blocos</span></div>
+  <nav id="tabs" aria-label="Seções"></nav>
+  <button id="sync" data-act="tab" data-tab="ajustes"></button>
+</header>
+<main id="main"></main>
+<div id="scrim"></div>
+<aside id="sheet" aria-live="polite"></aside>
+<div id="toast" role="status"></div>
+<input type="file" id="filepick" accept=".json,application/json" hidden>
+<script src="store.js"></script>
+<script src="sync.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
