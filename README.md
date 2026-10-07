@@ -36,6 +36,18 @@ Depois de aberta uma vez, a versão web funciona sem internet.
 - **Prazo**: antes de criar a obra, o app soma os blocos da planta e diz se cabem na sua capacidade até a data.
 - **Diagnóstico semanal**: blocos concluídos por tipo, quantos foram quebrados (sinal de estimativa ruim) e qual cor está acumulando.
 
+## O que tem dentro
+
+São 166 funcionalidades, listadas em [FUNCIONALIDADES.md](FUNCIONALIDADES.md). As principais além do método básico:
+
+- **Cartão do bloco** com frente e verso: notas, checklist, energia, prazo próprio, etiquetas, link, rotina, cronômetro e história.
+- **Kanban de blocos** em sete agrupamentos (estado, cor, tamanho, obra, semana, energia e módulo). Arrastar entre colunas muda o bloco de verdade.
+- **Modo foco**: um bloco na tela, com a peça enchendo enquanto o tempo do tamanho passa.
+- **Manual de montagem** de cada obra, com passos paralelos, caminho crítico e previsão de término.
+- **Muro**: cada bloco encaixado vira um tijolo; sequência de dias, níveis, meta semanal e conquistas.
+- **Captura rápida**: `Ligar para o cartório #comunicar @P !` cria o bloco; sem `#tipo`, o verbo decide a cor.
+- **Animações e sons próprios** para encaixe, liberação, quebra, recusa e entrega de obra.
+
 ### As peças são personalizáveis
 
 Em **Ajustes** dá para mudar o nome, a cor e a descrição de cada tipo, criar e excluir tipos, mudar a duração e a sigla dos tamanhos (ou criar outros), definir quantos blocos de cada tamanho cabem no dia e quais são os dias de trabalho. Tudo isso acompanha a sincronização.
